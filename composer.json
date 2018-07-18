@@ -1,0 +1,34 @@
+{
+    "name": "drnixx/yii2-widget-select2",
+    "description": "Enhanced Yii2 wrapper for the Select2 jQuery plugin",
+    "type": "yii2-extension",
+    "require": {
+        "php": ">=5.6.0",
+        "yiisoft/yii2": "~2.0.6",
+
+        "bower-asset/select2": "^4.0.5",
+
+        "drnixx/yii2-onix": "^1.8.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nick Panteleeff",
+            "email": "drnix@chess-online.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "onix\\": "src/"
+        }
+    },
+     "config": {
+        "platform": {"php": "5.6"}
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
