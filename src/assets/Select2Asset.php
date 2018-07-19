@@ -9,6 +9,7 @@ class Select2Asset extends AssetBundle
      */
     public $depends = [
         Select2VendorAsset::class,
+        FontAwesomeAsset::class
     ];
 
     public function init()
