@@ -3,7 +3,7 @@ namespace onix\assets;
 
 use yii\web\JqueryAsset;
 
-class SelectVendor2Asset extends AssetBundle
+class Select2VendorAsset extends AssetBundle
 {
     /**
      * @inheritdoc

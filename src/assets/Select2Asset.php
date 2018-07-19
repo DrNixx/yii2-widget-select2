@@ -8,7 +8,7 @@ class Select2Asset extends AssetBundle
      * @inheritdoc
      */
     public $depends = [
-        SelectVendor2Asset::class,
+        Select2VendorAsset::class,
     ];
 
     public function init()
