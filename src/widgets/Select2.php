@@ -97,9 +97,9 @@ class Select2 extends InputWidget
      * @var array the toggle all button settings for selecting/unselecting all the options. This is applicable only for
      * multiple select. The following array key properties can be set:
      * - `selectLabel`: _string_, the markup to be shown to select all records. Defaults to:
-     *   `<i class="glyphicon glyphicon-unchecked"></i> Select all`.
+     *   `<i class="fa-square-o"></i> Select all`.
      * - `unselectLabel`: _string_, the markup to be shown to unselect all records. Defaults to:
-     *   `<i class="glyphicon glyphicon-checked"></i> Unselect all`.
+     *   `<i class="fa-check-square-o"></i> Unselect all`.
      * - `selectOptions`: _array_, the HTML attributes for the container wrapping the select label. Defaults to `[]`.
      * - `unselectOptions`: _array_, the HTML attributes for the container wrapping the unselect label. Defaults to `[]`.
      * - `options`: _array_, the HTML attributes for the toggle button container. Defaults to:
@@ -224,8 +224,8 @@ class Select2 extends InputWidget
             return;
         }
         $settings = array_replace_recursive([
-            'selectLabel' => '<i class="glyphicon glyphicon-unchecked"></i>' . Yii::t('onix-select', 'Select all'),
-            'unselectLabel' => '<i class="glyphicon glyphicon-check"></i>' . Yii::t('onix-select', 'Unselect all'),
+            'selectLabel' => '<i class=" fa-square-o"></i>' . Yii::t('onix-select', 'Select all'),
+            'unselectLabel' => '<i class="fa-check-square-o"></i>' . Yii::t('onix-select', 'Unselect all'),
             'selectOptions' => [],
             'unselectOptions' => [],
             'options' => ['class' => 's2-togall-button']
@@ -358,7 +358,7 @@ class Select2 extends InputWidget
             /**
              * @var AssetBundle $bundleClass
              */
-            $bundleClass = __NAMESPACE__ . '\Theme' . ucfirst($this->theme) . 'Asset';
+            $bundleClass = '\onix\assets\Theme' . ucfirst($this->theme) . 'Asset';
             $bundleClass::register($view);
         }
     }
