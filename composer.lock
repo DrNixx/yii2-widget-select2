@@ -4,8 +4,29 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f0147a7ab126ee04b29cb3bc712d52a",
+    "content-hash": "0440538a7ac9204a38f7b55a8c50dde6",
     "packages": [
+        {
+            "name": "bower-asset/font-awesome",
+            "version": "v4.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FortAwesome/Font-Awesome.git",
+                "reference": "a8386aae19e200ddb0f6845b5feeee5eb7013687"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/a8386aae19e200ddb0f6845b5feeee5eb7013687",
+                "reference": "a8386aae19e200ddb0f6845b5feeee5eb7013687",
+                "shasum": null
+            },
+            "type": "bower-asset",
+            "license": [
+                "OFL-1.1",
+                "MIT",
+                "CC-BY-3.0"
+            ]
+        },
         {
             "name": "bower-asset/inputmask",
             "version": "3.3.11",
@@ -163,6 +184,44 @@
                 "markdown-extra"
             ],
             "time": "2017-07-16T21:13:23+00:00"
+        },
+        {
+            "name": "drnixx/yii2-fa-asset",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DrNixx/yii2-fa-asset.git",
+                "reference": "3ec7985a86af795c15c8f4bf0842487f1521501d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DrNixx/yii2-fa-asset/zipball/3ec7985a86af795c15c8f4bf0842487f1521501d",
+                "reference": "3ec7985a86af795c15c8f4bf0842487f1521501d",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/font-awesome": "^4.0",
+                "php": ">=5.6.0",
+                "yiisoft/yii2": "~2.0.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "onix\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nick Panteleeff",
+                    "email": "drnix@chess-online.com"
+                }
+            ],
+            "description": "FontAwesome Assets for Yii2",
+            "time": "2018-03-14T16:56:33+00:00"
         },
         {
             "name": "drnixx/yii2-onix",

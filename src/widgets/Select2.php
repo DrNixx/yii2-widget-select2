@@ -64,7 +64,7 @@ class Select2 extends InputWidget
     /**
      * @var string the theme name to be used for styling the Select2.
      */
-    public $theme = self::THEME_BOOTSTRAP;
+    public $theme = self::THEME_DEFAULT;
 
     /**
      * @var string|array, the displayed text in the dropdown for the initial value when you do not set or provide
@@ -190,9 +190,11 @@ class Select2 extends InputWidget
         if (!empty($this->addon) || empty($this->pluginOptions['width'])) {
             $this->pluginOptions['width'] = '100%';
         }
+
         if ($this->hideSearch) {
             $this->pluginOptions['minimumResultsForSearch'] = new JsExpression('Infinity');
         }
+
         $this->initPlaceholder();
         if (!isset($this->data)) {
             if (!isset($this->value) && !isset($this->initValueText)) {
@@ -207,6 +209,7 @@ class Select2 extends InputWidget
                 $this->data = $multiple ? array_combine((array)$key, (array)$val) : [$key => $val];
             }
         }
+
         Html::addCssClass($this->options, 'form-control');
         $this->initLanguage('language', true);
         $this->renderToggleAll();
@@ -223,6 +226,7 @@ class Select2 extends InputWidget
         if (!$this->options['multiple'] || !$this->showToggleAll ) {
             return;
         }
+
         $settings = array_replace_recursive([
             'selectLabel' => '<i class=" fa-square-o"></i>' . Yii::t('onix-select', 'Select all'),
             'unselectLabel' => '<i class="fa-check-square-o"></i>' . Yii::t('onix-select', 'Unselect all'),
@@ -250,6 +254,7 @@ class Select2 extends InputWidget
                 'onfocus' => '$("#' . $this->options['id'] . '").select2("open");'
             ]);
         }
+
         echo Html::tag('span', $out, ['id' => 'parent-' . $options['id'], 'style' => 'display:none']);
     }
 
@@ -266,10 +271,12 @@ class Select2 extends InputWidget
             }
             return;
         }
+
         if (isset($this->options['placeholder'])) {
             $this->pluginOptions['placeholder'] = $this->options['placeholder'];
             unset($this->options['placeholder']);
         }
+
         if (isset($this->pluginOptions['placeholder']) && is_string($this->pluginOptions['placeholder']) && !$isMultiple) {
             $this->options['prompt'] = $this->pluginOptions['placeholder'];
         }
@@ -287,6 +294,7 @@ class Select2 extends InputWidget
         if (empty($this->addon)) {
             return $input;
         }
+
         $group = ArrayHelper::getValue($this->addon, 'groupOptions', []);
         $size = isset($this->size) ? ' input-group-' . $this->size : '';
         Html::addCssClass($group, 'input-group' . $size);
@@ -296,6 +304,7 @@ class Select2 extends InputWidget
             Html::addCssClass($group, 'onix-input-group-hide');
             Html::addCssClass($group, 'group-' . $this->options['id']);
         }
+
         if (is_array($prepend)) {
             $content = ArrayHelper::getValue($prepend, 'content', '');
             if (isset($prepend['asButton']) && $prepend['asButton'] == true) {
@@ -305,6 +314,7 @@ class Select2 extends InputWidget
             }
             Html::addCssClass($group, 'select2-bootstrap-prepend');
         }
+
         if (is_array($append)) {
             $content = ArrayHelper::getValue($append, 'content', '');
             if (isset($append['asButton']) && $append['asButton'] == true) {
@@ -314,6 +324,7 @@ class Select2 extends InputWidget
             }
             Html::addCssClass($group, 'select2-bootstrap-append');
         }
+
         $addonText = $prepend . $input . $append;
         $contentBefore = ArrayHelper::getValue($this->addon, 'contentBefore', '');
         $contentAfter = ArrayHelper::getValue($this->addon, 'contentAfter', '');
@@ -330,6 +341,7 @@ class Select2 extends InputWidget
             $this->_loadIndicator = '<div class="onix-plugin-loading loading-' . $this->options['id'] . '">&nbsp;</div>';
             Html::addCssStyle($this->options, 'display:none');
         }
+
         $input = $this->getInput('dropDownList', true);
         echo $this->_loadIndicator . $this->embedAddon($input);
     }
@@ -378,6 +390,7 @@ class Select2 extends InputWidget
             'doToggle' => static::parseBool($isMultiple && $this->showToggleAll),
             'doOrder' => static::parseBool($isMultiple && $this->maintainOrder),
         ]);
+
         $this->_s2OptionsVar = 's2options_' . hash('crc32', $options);
         $this->options['data-s2-options'] = $this->_s2OptionsVar;
         $view = $this->getView();
@@ -386,6 +399,7 @@ class Select2 extends InputWidget
             $val = Json::encode(is_array($this->value) ? $this->value : [$this->value]);
             $view->registerJs("initS2Order('{$id}',{$val});");
         }
+
         $this->registerPlugin($this->pluginName, "jQuery('#{$id}')", "initS2Loading('{$id}','{$this->_s2OptionsVar}')");
     }
 }
