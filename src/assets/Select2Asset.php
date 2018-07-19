@@ -3,11 +3,18 @@ namespace onix\assets;
 
 class Select2Asset extends AssetBundle
 {
+
+    /**
+     * @inheritdoc
+     */
+    public $depends = [
+        SelectVendor2Asset::class,
+    ];
+
     public function init()
     {
-        $this->setSourcePath('@bower/select2/dist');
-        $this->setupAssets('css', ['css/select2']);
-        $this->setupAssets('js', ['js/select2.full']);
+        $this->setSourcePath(dirname(dirname(__DIR__)) . '/assets');
+        $this->setupAssets('js', ['js/select2.add']);
 
         parent::init();
     }

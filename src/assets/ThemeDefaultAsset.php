@@ -11,7 +11,7 @@ class ThemeDefaultAsset extends AssetBundle
      */
     public function init()
     {
-        $this->setSourcePath(__DIR__ . '../..//assets');
+        $this->setSourcePath(dirname(dirname(__DIR__)) . '/assets');
         $this->setupAssets('css', ['css/select2-default']);
         parent::init();
     }
