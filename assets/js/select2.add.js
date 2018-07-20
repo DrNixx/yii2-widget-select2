@@ -114,14 +114,14 @@ var initS2ToggleAll = function () {
          */
         var opts = window[optVar] || {}, themeCss = opts.themeCss, sizeCss = opts.sizeCss, doOrder = opts.doOrder,
             doReset = opts.doReset, doToggle = opts.doToggle, $el = $('#' + id), $container = $(themeCss),
-            $loading = $('.kv-plugin-loading.loading-' + id), $group = $('.group-' + id);
+            $loading = $('.onix-plugin-loading.loading-' + id), $group = $('.group-' + id);
         $el.off('.onixs2');
         if (!$container.length) {
             $el.show();
         }
 
         if ($group.length) {
-            $group.removeClass('kv-input-group-hide').removeClass('.group-' + id);
+            $group.removeClass('onix-input-group-hide').removeClass('.group-' + id);
         }
 
         if ($loading.length) {

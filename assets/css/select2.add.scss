@@ -1,3 +1,18 @@
+.onix-plugin-loading {
+  width: 25px;
+  height: 25px;
+  background: transparent url('loading.gif') center left no-repeat;
+}
+
+.onix-hide {
+  display: none;
+}
+
+.onix-input-group-hide .input-group-addon,
+.onix-input-group-hide .input-group-btn {
+  visibility: hidden;
+}
+
 .s2-togall-select .s2-unselect-label,
 .s2-togall-unselect .s2-select-label {
   display: none;
